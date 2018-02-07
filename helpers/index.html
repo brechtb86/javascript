@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>helpers</title>
+
+    <script type="text/javascript" src="helpers.js"></script>
+    
+    <script type="text/javascript">
+        function init() {
+
+            var byteHelper = new brechtbaekelandt.helpers.ByteHelper();
+            var bytes = 123456789;
+            console.log(bytes + " bytes is " + byteHelper.bytesToSizeString(123456789));
+
+            var guidHelper = new brechtbaekelandt.helpers.GuidHelper();
+            console.log("new guid: " + guidHelper.createGuid());
+
+            var numberHelper = new brechtbaekelandt.helpers.NumberHelper();
+            var number = 12.34567;
+            console.log(number + " rounded to three decimals is " + numberHelper.roundTo(number, 3));
+        }
+
+
+    </script>
+</head>
+
+<body onload="init();">
+    <h1>helpers:</h1>
+    <p>see console for test results...</p>
+</body>
+
+</html>
