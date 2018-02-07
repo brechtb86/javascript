@@ -56,7 +56,7 @@ brechtbaekelandt.helpers = (function () {
     function UrlHelper() {
     };
 
-    UrlHelper.prototype.parseURL = function (url) {
+    UrlHelper.prototype.parseUrl = function (url) {
         var urlParseRegex = /^(((([^:\/#\?]+:)?(?:(\/\/)((?:(([^:@\/#\?]+)(?:\:([^:@\/#\?]+))?)@)?(([^:\/#\?\]\[]+|\[[^\/\]@#?]+\])(?:\:([0-9]+))?))?)?)?((\/?(?:[^\/\?#]+\/+)*)([^\?#]*)))?(\?[^#]+)?)(#.*)?/;
 
         var matches = urlParseRegex.exec(url || "") || [];
@@ -107,7 +107,7 @@ brechtbaekelandt.helpers = (function () {
         };
     };
 
-    UrlHelper.prototype.getParameterByName = function (name, url) {
+    UrlHelper.prototype.getParameterByName = function (url, name) {
         if (!url) url = window.location.href;
 
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -142,10 +142,16 @@ brechtbaekelandt.helpers = (function () {
     function WebHelper() {
     };
 
-    Webhelper.prototype.fileExists = function (url) {
+    WebHelper.prototype.fileExists = function (url) {
         var http = new XMLHttpRequest();
         http.open("HEAD", url, false);
-        http.send();
+
+        try {
+            http.send();
+        }
+        catch(err) {
+            return false;
+        }     
 
         return http.status !== 404;
     };
@@ -154,6 +160,7 @@ brechtbaekelandt.helpers = (function () {
         ByteHelper: ByteHelper,
         GuidHelper: GuidHelper,
         NumberHelper: NumberHelper,
-        UrlHelper: UrlHelper
+        UrlHelper: UrlHelper,
+        WebHelper: WebHelper
     };
 })();

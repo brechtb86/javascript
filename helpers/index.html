@@ -4,22 +4,49 @@
     <title>helpers</title>
 
     <script type="text/javascript" src="helpers.js"></script>
-    
+
     <script type="text/javascript">
         function init() {
 
+            console.log("byte helper");
+            console.log("-----------");
             var byteHelper = new brechtbaekelandt.helpers.ByteHelper();
             var bytes = 123456789;
-            console.log(bytes + " bytes is " + byteHelper.bytesToSizeString(123456789));
+            console.log(bytes + " bytes is: " + byteHelper.bytesToSizeString(123456789));
+            console.log("-----------")
 
+            console.log("guid helper");
+            console.log("-----------");
             var guidHelper = new brechtbaekelandt.helpers.GuidHelper();
             console.log("new guid: " + guidHelper.createGuid());
+            console.log("-----------")
 
+            console.log("number helper");
+            console.log("-------------");
             var numberHelper = new brechtbaekelandt.helpers.NumberHelper();
             var number = 12.34567;
-            console.log(number + " rounded to three decimals is " + numberHelper.roundTo(number, 3));
-        }
+            console.log(number + " rounded to three decimals is: " + numberHelper.roundTo(number, 3));
+            console.log("------------")
 
+            console.log("url helper");
+            console.log("----------");
+            var urlHelper = new brechtbaekelandt.helpers.UrlHelper();
+            var url = "http://www.brechtbaekelandt.net/?searchTerms=core&searchTerms=.net&tags=captcha&categoryName=dev&currentPage=1";
+            console.log(url + " parameter categoryName has value: " + urlHelper.getParameterByName(url, "categoryName"));
+            console.log(url + " is a valid url: " + urlHelper.isValidUrl(url));
+            console.log(url + " is a valid magnet url: " + urlHelper.isValidMagnetUrl(url));
+            console.log(url + " has protocol: " + urlHelper.parseUrl(url).protocol);
+            console.log(url + " has host: " + urlHelper.parseUrl(url).host);
+            console.log(url + " has querystring: " + urlHelper.parseUrl(url).search);
+            console.log("----------");
+
+            console.log("web helper");
+            console.log("----------");
+            var webHelper = new brechtbaekelandt.helpers.WebHelper();
+           
+            console.log("web helper fileExists only works on same domain, or if the requested domain has Access-Control-Allow-Origin header");
+            console.log("----------");
+        }
 
     </script>
 </head>
