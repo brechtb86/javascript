@@ -46,7 +46,9 @@
             console.log("web helper");
             console.log("----------");
             var webHelper = new brechtbaekelandt.helpers.WebHelper();
-            console.log("web helper fileExists only works on same domain, or if the requested domain has the Access-Control-Allow-Origin header");
+            var fileUrl = "http://www.brechtbaekelandt.net/images/me.png";
+            console.log(fileUrl + " exists: " + webHelper.fileExists(fileUrl));
+            console.log("(web helper fileExists only works on same domain, or if the requested domain has the Access-Control-Allow-Origin header)");
             console.log("----------");
         }
 
@@ -55,9 +57,58 @@
 
 <body onload="init();">
     <a href="../index.html">go home</a>
-    <h1>helpers</h1>
+    <h2>helpers</h2>
     <hr>
-    <p>see console for test results...</p>    
+    <p>see console for test results...</p>
+    <h4>ByteHelper</h4>
+    <i>usage:</i>
+    <p>
+        var byteHelper = new brechtbaekelandt.helpers.ByteHelper();
+        <br> var bytes = 123456789;
+        <br>
+        <br> console.log(bytes + " bytes is: " + byteHelper.bytesToSizeString(123456789));
+    </p>
+    <h4>GuidHelper</h4>
+    <i>usage:</i>
+    <p>
+        var guidHelper = new brechtbaekelandt.helpers.GuidHelper();
+        <br>
+        <br> console.log("new guid: " + guidHelper.createGuid());
+    </p>
+    <h4>NumberHelper</h4>
+    <i>usage:</i>
+    <p>
+        var numberHelper = new brechtbaekelandt.helpers.NumberHelper();        
+        <br> var number = 12.34567;
+        <br>
+        <br> console.log(number + " rounded to three decimals is: " + numberHelper.roundTo(number, 3));
+    </p>
+    <h4>UrlHelper</h4>
+    <i>usage:</i>
+    <p>
+        var urlHelper = new brechtbaekelandt.helpers.UrlHelper();
+        <br> var url = "http://www.brechtbaekelandt.net/?searchTerms=core&amp;searchTerms=.net&amp;tags=captcha&amp;categoryName=dev&amp;currentPage=1";
+        <br>
+        <br> console.log(url + " parameter categoryName has value: " + urlHelper.getParameterByName(url, "categoryName"));
+        <br> console.log(url + " is a valid url: " + urlHelper.isValidUrl(url));
+        <br> console.log(url + " is a valid magnet url: " + urlHelper.isValidMagnetUrl(url));
+        <br> console.log(url + " has protocol: " + urlHelper.parseUrl(url).protocol);
+        <br> console.log(url + " has host: " + urlHelper.parseUrl(url).host);
+        <br> console.log(url + " has querystring: " + urlHelper.parseUrl(url).search);
+    </p>
+    <h4>WebHelper</h4>
+    <i>usage:</i>
+    <p>
+        var webHelper = new brechtbaekelandt.helpers.WebHelper();
+        <br> var fileUrl = "http://www.brechtbaekelandt.net/images/me.png";
+        <br>
+        <br> console.log(fileUrl + " exists: " + webHelper.fileExists(fileUrl));
+        <h5>
+            <i>WebHelper.fileExists only works on same domain, or if the requested domain has the Access-Control-Allow-Origin
+                header
+            </i>
+        </h5>
+    </p>
 </body>
 
 </html>

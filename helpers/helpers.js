@@ -145,13 +145,7 @@ brechtbaekelandt.helpers = (function () {
     WebHelper.prototype.fileExists = function (url) {
         var http = new XMLHttpRequest();
         http.open("HEAD", url, false);
-
-        try {
-            http.send();
-        }
-        catch(err) {
-            return false;
-        }     
+        http.send();
 
         return http.status !== 404;
     };
