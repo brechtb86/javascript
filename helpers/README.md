@@ -1,5 +1,5 @@
 # helpers
-Some helper classes
+Some helper classes *(this will be updated frequently)*
 
 #### ByteHelper
 
