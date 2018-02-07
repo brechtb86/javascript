@@ -30,7 +30,7 @@ roundTo(number, digits)
 *Methods:*
 
 ```javascript
-parseUrl(url);
+parseUrl(url)
 getParameterByName(url, name)
 isValidUrl(url)
 isValidMagnetUrl(url)
@@ -44,12 +44,4 @@ isValidMagnetUrl(url)
 fileExists(url)
 ```
 
-
-
-
-
-
-
-
-
-For usage check index.html
+##### For usage check index.html
