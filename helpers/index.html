@@ -3,6 +3,9 @@
 <head>
     <title>helpers</title>
 
+    <link href="../site.css" rel="stylesheet" type="text/css">
+    <link href="helpers.css" rel="stylesheet" type="text/css">
+
     <script type="text/javascript" src="helpers.js"></script>
 
     <script type="text/javascript">
@@ -43,8 +46,7 @@
             console.log("web helper");
             console.log("----------");
             var webHelper = new brechtbaekelandt.helpers.WebHelper();
-           
-            console.log("web helper fileExists only works on same domain, or if the requested domain has Access-Control-Allow-Origin header");
+            console.log("web helper fileExists only works on same domain, or if the requested domain has the Access-Control-Allow-Origin header");
             console.log("----------");
         }
 
@@ -52,8 +54,10 @@
 </head>
 
 <body onload="init();">
-    <h1>helpers:</h1>
-    <p>see console for test results...</p>
+    <a href="../index.html">go home</a>
+    <h1>helpers</h1>
+    <hr>
+    <p>see console for test results...</p>    
 </body>
 
 </html>

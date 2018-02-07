@@ -1,0 +1,28 @@
+html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: Verdana, sans-serif;
+    padding: 50px;
+}
+
+h1, h2, h3, h4, h5, h3{
+    margin: 10px 0 10px 0;
+}
+
+a{
+    color: #540804;
+}
+
+p{
+    margin: 5px 0 5px 0;
+}
+
+hr{
+    margin: 5px 0 5px 0;
+}
